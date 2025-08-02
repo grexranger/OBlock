@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "OBlock",
+  "version": "1.1",
+  "description": "Skjul indlæg og citater fra valgte brugere på forum.ob.dk",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["https://forum.ob.dk/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "oblock_icon.png"
+  },
+  "icons": {
+    "48": "oblock_icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://forum.ob.dk/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
